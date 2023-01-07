@@ -1,0 +1,25 @@
+footer {
+  background-color: var(--color-secondary);
+  height: 40px;
+  color: var(--color-white);
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+footer > a {
+  cursor: pointer;
+  padding: 8px;
+  font-size: 12px;
+}
+
+footer > a > mark {
+  background-color: inherit;
+  color: var(--color-white);
+  font-weight: bold;
+  font-family: 'DynaPuff';
+  font-style: 16px;
+}
+
+

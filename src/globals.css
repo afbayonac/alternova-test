@@ -1,5 +1,14 @@
 :root {
+  --color-white: #FFF;
   --color-primary: #e61a6e;
   --color-secondary: #333;
   --color-gray-01: #ededed;
+  font-family: 'Mulish';
+  color: var(--color-secondary);
+  background-color: var(--color-white);
+}
+
+a {
+  color: var(--color-white);
+  text-decoration: none;
 }
