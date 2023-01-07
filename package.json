@@ -1,0 +1,19 @@
+{
+  "name": "alternova-test",
+  "version": "1.0.0",
+  "description": "A technical Test for alternova",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/afbayonac/alternova-test.git"
+  },
+  "author": "afbayonac",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/afbayonac/alternova-test/issues"
+  },
+  "homepage": "https://github.com/afbayonac/alternova-test#readme"
+}
