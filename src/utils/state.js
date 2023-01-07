@@ -1,3 +1,5 @@
+import stock from './stock.json'
+
 const createStore = (reducer, initialState) => {
   let state = initialState
   const subscribers = []
@@ -21,6 +23,6 @@ const reducer = (state, { type, payload }) => {
 }
 
 export const [subscribe, dispatch, getstate] = createStore(reducer, {
-  products: [],
+  products: stock.products,
   cart: []
 })

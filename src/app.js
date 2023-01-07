@@ -10,11 +10,13 @@ import './styles/footer.css'
 
 // container styles
 import './styles/main.css'
-// import { log } from './utils/log'
-// import list from './components/list'
+import { log } from './utils/log'
+import list from './components/list'
+import cart from './components/cart'
 
 
-// log('Init app')
+log('Init app')
 
-// const root = document.getElementById('root')
-// list(root, document, parent)
+const root = document.getElementById('root')
+list(root, document, parent)
+cart(root, document, parent)

@@ -1,8 +1,17 @@
 main {
-  min-height: calc(100vh - 100px);
-  display: grid;
 }
 
 .main__container {
   max-width: 1440px;
+  display: grid;
+  margin: 0 auto;
+  min-height: calc(100vh - 100px);
+}
+
+
+@media (min-width: 720px)  {
+  .main__container {
+    grid-template: 
+      "a  b" auto / auto 375px;
+  }
 }

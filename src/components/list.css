@@ -1,5 +1,86 @@
 .list {
-  display: grid;
-  background-color: red;
-  height: 20px;
+  display: flex;
+  gap: 16px;
+  padding: 24px 8px;
+  max-width: 100%;
+  overflow: hidden;
+  flex-wrap: wrap;
+  justify-content: start;
+}
+
+.product {
+  box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+  width: 320px;
+  height: 320px;
+  margin: 0 auto;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+
+.product__image {
+  aspect-ratio: 5/3 ;
+  width: 100%;
+  overflow: hidden;
+}
+
+.product__image > img {
+  width: 100%;
+  object-fit: cover;
+}
+.product__content{
+  padding: 16px;
+}
+
+.product__name {
+  font-family: 'DynaPuff';
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 24px;
+  line-height: 28px;
+  max-width: 100%;
+  margin-bottom: 4px;
+}
+
+.product__price {
+  font-family: 'DynaPuff';
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+
+
+.product__actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+
+.product input {
+  outline: none;
+  border: none;
+  font-size: 20px;
+  width: 150px;
+}
+
+.product button {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  outline: none;
+  border: none;
+  font-size: 18px;
+  border-radius: 5px;
+  padding: 4px 16px;
+  opacity: 0.8;
+  font-weight: bold;
+  color: var(--color-white);
+  background-color: var(--color-primary);
+  cursor: pointer;
+}
+
+
+.product button:hover {
+  opacity: 1;
 }
