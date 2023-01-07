@@ -4,7 +4,9 @@
   "description": "A technical Test for alternova",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "webpack",
+    "build": "webpack --mode production",
+    "dev": "webpack serve --mode development"
   },
   "repository": {
     "type": "git",
@@ -15,5 +17,14 @@
   "bugs": {
     "url": "https://github.com/afbayonac/alternova-test/issues"
   },
-  "homepage": "https://github.com/afbayonac/alternova-test#readme"
+  "homepage": "https://github.com/afbayonac/alternova-test#readme",
+  "devDependencies": {
+    "copy-webpack-plugin": "^11.0.0",
+    "eslint": "^8.31.0",
+    "html-webpack-plugin": "^5.5.0",
+    "source-map-loader": "^4.0.1",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1",
+    "webpack-dev-server": "^4.11.1"
+  }
 }
