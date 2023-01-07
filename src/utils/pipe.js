@@ -1,0 +1,1 @@
+export const pipe = (...fns) => fns.reduce((acc, fn) => fn(acc)) 
