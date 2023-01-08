@@ -6,17 +6,17 @@ The application should not have a backend.
 
 ### This is what the application needs to do:
 
-- [ ] Read a JSON file from the project with the list of available products, the quantity in stock, and the price per unit.
+- [x] Read a JSON file from the project with the list of available products, the quantity in stock, and the price per unit.
 
-- [ ] Render the store layout with a dummy image in all the products. You can have any image in the project. We should be able to test the layout in a desktop- screen and a iPhone X screen size.
+- [x] Render the store layout with a dummy image in all the products. You can have any image in the project. We should be able to test the layout in a desktop- screen and a iPhone X screen size.
 
-- [ ] Have a cart that will be filled when clicking add to cart. If a product doesn't have enough stock it should not be added to the cart and a visual indicator should be shown.
+- [x] Have a cart that will be filled when clicking add to cart. If a product doesn't have enough stock it should not be added to the cart and a visual indicator should be shown.
 
-- [ ] Generate a new JSON file once the order button is clicked. The JSON file should have the products, the quantity that will be bought, the total price per product, and the total price of the order. You are free to propose the result JSON structure.
+- [x] Generate a new JSON file once the order button is clicked. The JSON file should have the products, the quantity that will be bought, the total price per product, and the total price of the order. You are free to propose the result JSON structure.
 
 ## Hints
 
-- [ ] JSON structure that the app should read:
+- [x] JSON structure that the app should read:
 
 ```json
 
@@ -32,6 +32,6 @@ The application should not have a backend.
 
 ```
 
-- [ ] Mockup of the store:
+- [x] Mockup of the store:
 
 ![moack!](./mock.png "mock")
