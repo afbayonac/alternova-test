@@ -17,7 +17,7 @@ const product = (parent, document, windows, id) => {
   input.setAttribute('value', `${units > 0 ? '1' : '0'}`)
   // TODO: Validar input
   input.addEventListener('input', (e) => { 
-    const sanity = e.target.value.replace(/^([^0-9]{0,})/, '')
+    const sanity = e.target.value.replace(/^([^0-9]{0,})/, '')  
     input.value =  Number(sanity) > Number(input.max) ? input.max : sanity
   })
 
@@ -25,8 +25,10 @@ const product = (parent, document, windows, id) => {
   btn.innerHTML = 'Add to Cart'
   btn.addEventListener('click', () => dispatch({ type: 'ADD', payload: { units: Number(input.value), id } }))
   if (units < 1) {
+    input.setAttribute('disabled', true)
     btn.setAttribute('disabled', true)
   } else {
+    input.removeAttribute('disabled')
     btn.removeAttribute('disabled')
   }
 
@@ -59,8 +61,10 @@ const product = (parent, document, windows, id) => {
         input.value = `${units > 0 ? '1' : '0'}`
 
         if (units < 1) {
+          input.setAttribute('disabled', true)
           btn.setAttribute('disabled', true)
         } else {
+          input.removeAttribute('disabled')
           btn.removeAttribute('disabled')
         }
 
