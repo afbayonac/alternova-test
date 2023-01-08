@@ -1,7 +1,8 @@
+/* eslint-disable camelcase */
 import { download } from '../utils/download'
 import { log } from '../utils/log'
 import { pipe } from '../utils/pipe'
-import { dispatch, getstate, subscribe } from '../utils/state'
+import { getstate, subscribe } from '../utils/state'
 import './cart.css'
 
 const cart = (parent, document, windows) => {
@@ -22,7 +23,7 @@ const cart = (parent, document, windows) => {
       <button id="btn">Create Order</button>
     </div>
     `
-  
+
   const { products } = getstate()
   const productsInCart = products
     .filter(product => product.cart > 0)
@@ -32,43 +33,41 @@ const cart = (parent, document, windows) => {
   } else {
     base.classList.add('hidden')
   }
-  
+
   const list = base.querySelector('#list')
   const total = base.querySelector('#total')
   const btn = base.querySelector('#btn')
 
-
-  btn.addEventListener('click', () =>  {
+  btn.addEventListener('click', () => {
     log('dowload file')
     const { products } = getstate()
-    
+
     const order = {
       products: products
-      .filter(product => product.cart > 0)
-      .map(p => ({
-        name: p.name,
-        quantity: p.cart,
-        unit_price: p.unit_price,
-        total_price: p.unit_price * p.units
-      })),
-      total: products.reduce((aco, p) => aco + p.cart * p.unit_price , 0)
+        .filter(product => product.cart > 0)
+        .map(p => ({
+          name: p.name,
+          quantity: p.cart,
+          unit_price: p.unit_price,
+          total_price: p.unit_price * p.units
+        })),
+      total: products.reduce((aco, p) => aco + p.cart * p.unit_price, 0)
     }
 
     download('order.json', JSON.stringify(order, null, 2))
   })
-
 
   pipe(
     () => products,
     item => {
       let value = item
       return ({ products }) => {
-        if (item === products) return
-        item = products
+        if (value === products) return
+        value = products
         log('add cart')
-        
+
         const productsInCart = products
-        .filter(product => product.cart > 0)
+          .filter(product => product.cart > 0)
 
         if (productsInCart.length > 0) {
           base.classList.remove('hidden')
@@ -76,13 +75,10 @@ const cart = (parent, document, windows) => {
           base.classList.add('hidden')
         }
 
-
-        let productsElement = productsInCart
+        const productsElement = productsInCart
           .filter(product => product.cart > 0)
-          .map(({stock, name, cart, unit_price}, i) => {
+          .map(({ stock, name, cart, unit_price }, i) => {
             const productElement = document.createElement('div')
-
-
 
             productElement.innerHTML = `
               <li class="cart__item">
@@ -97,10 +93,10 @@ const cart = (parent, document, windows) => {
             return productElement
           })
 
-        total.innerHTML = '$' + productsInCart.reduce((aco, {unit_price, cart}) => aco + unit_price * cart, 0)
+        total.innerHTML = '$' + productsInCart.reduce((aco, { unit_price, cart }) => aco + unit_price * cart, 0)
         list.replaceChildren(...productsElement)
       }
-    }, 
+    },
     subscribe
   )
 

@@ -1,5 +1,3 @@
-import cart from '../components/cart'
-import { log } from './log'
 import stock from './stock.json'
 
 const createStore = (reducer, initialState) => {
@@ -18,12 +16,9 @@ const createStore = (reducer, initialState) => {
 }
 
 const reducer = (state, { type, payload }) => {
-  log('executing reducer')
   switch (type) {
     case 'ADD': {
-      const { units , id } = payload
-      log({ units, id })
-
+      const { units, id } = payload
 
       return {
         ...state,
@@ -31,12 +26,12 @@ const reducer = (state, { type, payload }) => {
           ...state.products.slice(0, id),
           {
             ...state.products[id],
-            cart: state.products[id].cart + units, 
+            cart: state.products[id].cart + units,
             units: state.products[id].units - units
           },
           ...state.products.slice(id + 1, state.products.length)
         ]
-      };
+      }
     }
     default:
       return state

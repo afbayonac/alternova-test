@@ -1,1 +1,1 @@
-export const log = (...args) => console.log('[🛒 Alternova Shop]', ...args) 
+export const log = (...args) => console.log('[🛒 Alternova Shop]', ...args)

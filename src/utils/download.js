@@ -11,6 +11,3 @@ export const download = (filename, data) => {
     document.body.removeChild(elem)
   }
 }
-
-
- 

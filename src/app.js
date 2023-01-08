@@ -14,7 +14,6 @@ import { log } from './utils/log'
 import list from './components/list'
 import cart from './components/cart'
 
-
 log('Init app')
 
 const root = document.getElementById('root')

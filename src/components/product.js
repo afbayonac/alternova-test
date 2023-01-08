@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 import { log } from '../utils/log'
 import { pipe } from '../utils/pipe'
 import { dispatch, getstate, subscribe } from '../utils/state'
@@ -6,7 +7,7 @@ import './product.css'
 const product = (parent, document, windows, id) => {
   const base = document.createElement('div')
   const { products } = getstate()
-  const {stock, name, unit_price, units } = products[id]
+  const { name, unit_price, units } = products[id]
 
   base.classList.add('product')
 
@@ -16,9 +17,9 @@ const product = (parent, document, windows, id) => {
   input.setAttribute('min', '0')
   input.setAttribute('value', `${units > 0 ? '1' : '0'}`)
   // TODO: Validar input
-  input.addEventListener('input', (e) => { 
-    const sanity = e.target.value.replace(/^([^0-9]{0,})/, '')  
-    input.value =  Number(sanity) > Number(input.max) ? input.max : sanity
+  input.addEventListener('input', (e) => {
+    const sanity = e.target.value.replace(/^([^0-9]{0,})/, '')
+    input.value = Number(sanity) > Number(input.max) ? input.max : sanity
   })
 
   const btn = document.createElement('button')
@@ -52,8 +53,8 @@ const product = (parent, document, windows, id) => {
     item => {
       let value = item
       return ({ products }) => {
-        if (item === products[id]) return
-        item = products[id]
+        if (value === products[id]) return
+        value = products[id]
         const { units } = item
 
         log('init product subscription', units, `input-unit-${id}`)
@@ -67,9 +68,8 @@ const product = (parent, document, windows, id) => {
           input.removeAttribute('disabled')
           btn.removeAttribute('disabled')
         }
-
       }
-    }, 
+    },
     subscribe
   )
 
