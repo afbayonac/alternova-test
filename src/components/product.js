@@ -35,7 +35,7 @@ const product = (parent, document, windows, id) => {
 
   base.innerHTML = `
     <div class="product__image">
-      <img src="/mock.webp" alt="product image ${name}" />
+      <img src="./mock.webp" alt="product image ${name}" />
     </div>
     <div class="product__content">
       <div class="product__name">${name}</div>
