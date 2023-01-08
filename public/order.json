@@ -2,10 +2,22 @@
   "products": [
     {
       "name": "redbull",
-      "quantity": 1,
+      "quantity": 5,
       "unit_price": 5000,
-      "total_price": 20000
+      "total_price": 0
+    },
+    {
+      "name": "papitas de limón margarita",
+      "quantity": 1,
+      "unit_price": 1500,
+      "total_price": 0
+    },
+    {
+      "name": "meat / pound",
+      "quantity": 5,
+      "unit_price": 500,
+      "total_price": 1500
     }
   ],
-  "total": 5000
+  "total": 29000
 }
