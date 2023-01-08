@@ -3,6 +3,7 @@
   --color-primary: #e61a6e;
   --color-secondary: #333;
   --color-gray-01: #ededed;
+  --color-gray-02: #888;
   font-family: 'Mulish';
   color: var(--color-secondary);
   background-color: var(--color-white);
