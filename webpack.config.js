@@ -43,7 +43,7 @@ module.exports = (env, argv) => {
         minify: {
           removeRedundantAttributes: false
         },
-        ...(argv.mode === 'production' ? { base: 'https://afbayonac.github.io/priority-treemap/' } : {})
+        ...(argv.mode === 'production' ? { base: 'https://afbayonac.github.io/alternova-test/' } : {})
       }),
       new CopyPlugin({
         patterns: [
