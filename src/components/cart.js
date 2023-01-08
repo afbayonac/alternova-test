@@ -59,14 +59,14 @@ const cart = (parent, document, windows) => {
 
   pipe(
     () => products,
-    item => {
-      let value = item
+    products => {
+      let value = products
       return ({ products }) => {
         if (value === products) return
         value = products
         log('add cart')
 
-        const productsInCart = products
+        const productsInCart = value
           .filter(product => product.cart > 0)
 
         if (productsInCart.length > 0) {

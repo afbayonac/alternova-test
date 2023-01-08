@@ -55,9 +55,9 @@ const product = (parent, document, windows, id) => {
       return ({ products }) => {
         if (value === products[id]) return
         value = products[id]
-        const { units } = item
+        const { units } = value
 
-        log('init product subscription', units, `input-unit-${id}`)
+        log('init product subscription', units)
         input.max = `${units}`
         input.value = `${units > 0 ? '1' : '0'}`
 
