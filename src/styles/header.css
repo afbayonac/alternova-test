@@ -1,9 +1,9 @@
 header {
-  box-sizing: border-box;
-  width: 100%;
+  width: calc(100% - 32px);
   height: 60px;
-  font-display: block;
+  display: block;
   padding: 0 16px;
+  box-sizing: border-box;
   font-family: 'DynaPuff';
   background-color: var(--color-white);
   position: fixed;
